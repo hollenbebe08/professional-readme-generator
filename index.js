@@ -1,9 +1,13 @@
-//make node responsive
+//define the file system so that writeFile is able to use it
+const fs = require('fs');
+const generatePage = require('./src/page-template.js');
+
+//make node responsive and add the initial array for the data
 const readmeDataArgs = process.argv.slice(2, process.argv.length);
-console.log(readmeDataArgs);
+const[name, github] = readmeDataArgs;
 
-const printReadmeData = readmeDataArr => {
-    readmeDataArr.forEach(readmeItem => console.log(readmeItem));
-};
 
-printReadmeData(readmeDataArr);
+fs.writeFile('README.md', generatePage(name, github), err =>{
+    if (err) throw new Error(err);
+    console.log("README was created!");
+})
