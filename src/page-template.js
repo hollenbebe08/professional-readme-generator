@@ -1,7 +1,15 @@
 //create the function to generate the README file
 const generatePage = (name, github) => {
     return`
-    # Professional README Generator
+    # Project Title
+    ## Description
+    ## Table of Contents
+    ## Installation
+    ## Usage
+    ## License
+    ## Contributing
+    ## Tests
+    ## Questions
     ## Name: ${name}, 
     ## GitHub: ${github}
     `;
