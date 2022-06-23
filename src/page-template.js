@@ -1,18 +1,25 @@
 //create the function to generate the README file
-const generatePage = (name, github) => {
-    return`
-    # Project Title
-    ## Description
-    ## Table of Contents
-    ## Installation
-    ## Usage
-    ## License
-    ## Contributing
-    ## Tests
-    ## Questions
-    ## Name: ${name}, 
-    ## GitHub: ${github}
-    `;
+const generatePage = readmeData => {
+    let descTitle;
+    let descText;
+
+    if(!readmeData.confirmDesc){
+        descText = ''
+    } else {
+        descText = `${readmeData.description}`;
+    }
+
+return`
+# ${readmeData.title}
+## ${descText}
+`;
 };
 
 module.exports = generatePage;
+
+// templateData => {
+//     const {title, description, ...contents} = templateData;
+//     return `
+//     # ${templateData.title}
+//     `;
+// };
