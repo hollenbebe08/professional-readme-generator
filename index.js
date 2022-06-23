@@ -35,10 +35,6 @@ const promptUser = () => {
 };
 
 const promptSections =  readmeData => {
-    // if there is no array for the readmeData, create one
-    // if(!readmeData.sections){
-    //     readmeData.sections = [];
-    // }
     return inquirer
     .prompt ([
         {
@@ -77,20 +73,8 @@ const promptSections =  readmeData => {
             type: 'input',
             name: 'questions',
             message: 'Type your GitHub username to include a link to your profile and your email to have other users reach out to you with questions.'
-        },
-        // {
-        //     type: 'confirm',
-        //     name: 'ReadmeData',
-        //     message: 'Please confirm that you are happy with your answers?',
-        //     default: false
-        // }
+        }
     ]);
-    // .then(sectionData => {
-    //     readmeData.sections.push(sectionData);
-    //     if (sectionData.readmeData){
-    //         return promptSections()
-    //     }
-    // })
 };
 
 promptUser()
