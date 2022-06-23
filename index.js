@@ -8,18 +8,44 @@ const promptUser = () => {
         {  
             type: 'input',
             name: 'title',
-            message: 'What is the title of your project?'
+            message: 'What is the title of your project?(Required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your projects title');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'description',
-            message: 'Add a description for your project.'
+            message: 'Add a description for your project. (Required)',
+            validate: descriptionInput => {
+                if(descriptionInput){
+                    return true;
+                } else {
+                    console.log('Please add a description for your project.');
+                    return false;
+                }
+            }
         },
+    ]);
+};
+
+const promptSections =  readmeData => {
+    // if there is no array for the readmeData, create one
+    // if(!readmeData.sections){
+    //     readmeData.sections = [];
+    // }
+    return inquirer
+    .prompt ([
         {
             type: 'checkbox',
             name: 'contents',
             message: 'Choose which items your README will include in your Table of Contents. (Check all that apply)',
-            choices: ['Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions']
+            choices: ['Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions'],
         },
         {
             type: 'input',
@@ -52,21 +78,26 @@ const promptUser = () => {
             name: 'questions',
             message: 'Type your GitHub username to include a link to your profile and your email to have other users reach out to you with questions.'
         },
-        {
-            type: 'confirm',
-            name: 'confirmREADME',
-            message: 'Please confirm you have selected all items you intend to include in your README.',
-            default: false
-        }
+        // {
+        //     type: 'confirm',
+        //     name: 'ReadmeData',
+        //     message: 'Please confirm that you are happy with your answers?',
+        //     default: false
+        // }
     ]);
+    // .then(sectionData => {
+    //     readmeData.sections.push(sectionData);
+    //     if (sectionData.readmeData){
+    //         return promptSections()
+    //     }
+    // })
 };
 
-promptUser().then(answers => console.log(answers));
-
-
-
-
-
+promptUser()
+.then(promptSections)
+.then(readmeData => {
+    console.log(readmeData);
+});
 
 
 
