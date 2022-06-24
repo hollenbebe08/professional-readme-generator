@@ -178,13 +178,27 @@ const promptUser = readmeData => {
             when: function(confirm){
                 return confirm.confirmQuestions
             }
+        },
+        {
+            type: 'confirm',
+            name:'confirmContents',
+            message: 'Would you like your README to include a Table of Contents?',
+            default: false
+        },
+        {
+            type: 'checkbox',
+            name: 'contents',
+            message: 'Choose which items your README will include in your Table of Contents. (Check all that apply)',
+            choices: ['Installation', 'Usage Instructions', 'License', 'Contribution Instructions', 'Testing Instructions', 'Contact Information'],
+            validate: contentInput => {
+                if(contentInput){
+                    return true;
+                }return false;
+            },
+            when: function(confirm){
+                return confirm.confirmContents
+            }
         }
-                // {
-        //     type: 'checkbox',
-        //     name: 'contents',
-        //     message: 'Choose which items your README will include in your Table of Contents. (Check all that apply)',
-        //     choices: ['Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions'],
-        // },
     ]);
 };
 

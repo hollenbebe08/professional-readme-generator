@@ -7,6 +7,7 @@ const generatePage = readmeData => {
     let licenseText;
     let tText;
     let questionText;
+    let tableContentsText;
 
     if(!readmeData.confirmDesc){
         descText = ''
@@ -15,7 +16,7 @@ const generatePage = readmeData => {
     };
 
     if(!readmeData.confirmInstall){
-        installText = ''
+        installText =  ''
     } else {
         installText = `## Installation Instructions \n${readmeData.installation}`;
     };
@@ -51,14 +52,22 @@ const generatePage = readmeData => {
     if(!readmeData.confirmQuestions) {
         questionText = ''
     } else {
-        questionText = `## Contact Information \n${readmeData.questionsEmail}\n${readmeData.questionsInstructions}\n${readmeData.questionsGithub}`
+        questionText = `## Contact Information \n* ${readmeData.questionsEmail}\n* ${readmeData.questionsInstructions}\n* [GitHub Profile](${readmeData.questionsGithub})`
     }
+
+    if(!readmeData.confirmContents){
+        tableContentsText = ''
+    } else {
+        tableContentsText= `## Table of Contents \n* ${readmeData.contents}`;
+    } 
 
 //this returns what will be printed from the template onto the README.md file
 return`
 # ${readmeData.title}
 
 ${descText}
+
+${tableContentsText}
 
 ${installText}
 
