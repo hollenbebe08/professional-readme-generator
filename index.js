@@ -27,42 +27,85 @@ const promptUser = readmeData => {
         {
             type: 'input',
             name: 'description',
-            message: 'Add a description for your project. (Required)',
+            message: 'Add a description for your project.',
             validate: descriptionInput => {
                 if(descriptionInput){
                     return true;
-                } else {
-                    console.log('Please add a description for your project.');
-                    return false;
                 }
+                return false;
+            } ,
+            when: function(confirm) {
+                return confirm.confirmDesc;
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmInstall',
+            message: 'Would you like your README to include installation instructions for future users?',
+            default: false
+        },
+        {
+            type: 'input',
+            name: 'installation',
+            message: 'Add installation instructions.',
+            validate: installInput => {
+                if(installInput){
+                    return true;
+                } return false;
+            },
+            when: function(confirm) {
+                return confirm.confirmInstall;
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmUsage',
+            message: 'Would you like to add usage information about your project allowing future readers to know how your project is intended to be used?',
+            default: false
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'Add usage information.',
+            validate: usageInput => {
+                if (usageInput){
+                    return true;
+                } return false;
+            },
+            when: function(confirm) {
+                return confirm.confirmUsage;
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmContribution',
+            message: 'Would you like to include contribution guidelines for your project?',
+            default: false
+        },
+        {
+            type: 'input',
+            name: 'contribution',
+            message: 'Add contribution guidelines',
+            validate: contributionInput => {
+                if (contributionInput){
+                    return true;
+                } return false;
+            },
+            when: function(confirm){
+                return confirm.confirmContribution;
             }
         },
         // {
-        //     type: 'checkbox',
-        //     name: 'contents',
-        //     message: 'Choose which items your README will include in your Table of Contents. (Check all that apply)',
-        //     choices: ['Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions'],
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'installation',
-        //     message: 'Add installation instructions for future users.'
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'usage',
-        //     message: 'Add information about your project allowing future readers to know how your project is intended to be used.'
+        //     type: 'confirm',
+        //     name: 'confirmLicense',
+        //     message: 'Does your project have a license?',
+        //     default: false
         // },
         // {
         //     type: 'checkbox',
         //     name: 'license',
-        //     message: 'What license (if any) does your project have?',
+        //     message: 'Choose which license your project has?',
         //     choices: ['MIT', 'Apache 2.0', 'ISC']
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'contributing',
-        //     message: 'Detail any guidelines to follow if you would like other developers to contribute to your project.'
         // },
         // {
         //     type: 'input',
@@ -74,6 +117,12 @@ const promptUser = readmeData => {
         //     name: 'questions',
         //     message: 'Type your GitHub username to include a link to your profile and your email to have other users reach out to you with questions.'
         // }
+                // {
+        //     type: 'checkbox',
+        //     name: 'contents',
+        //     message: 'Choose which items your README will include in your Table of Contents. (Check all that apply)',
+        //     choices: ['Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions'],
+        // },
     ]);
 };
 
