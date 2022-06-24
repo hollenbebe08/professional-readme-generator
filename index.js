@@ -59,21 +59,21 @@ const promptUser = readmeData => {
         },
         {
             type: 'confirm',
-            name: 'confirmUsage',
-            message: 'Would you like to add usage information about your project allowing future readers to know how your project is intended to be used?',
+            name: 'confirmUInformation',
+            message: 'Would you like to add usage information about your project for future users?',
             default: false
         },
         {
             type: 'input',
-            name: 'usage',
-            message: 'Add usage information.',
-            validate: usageInput => {
-                if (usageInput){
+            name: 'uInstructions',
+            message: 'Add usage information',
+            validate: uInstructionsInput => {
+                if(uInstructionsInput) {
                     return true;
                 } return false;
             },
             when: function(confirm) {
-                return confirm.confirmUsage;
+                return confirm.confirmUInformation;
             }
         },
         {
@@ -95,28 +95,90 @@ const promptUser = readmeData => {
                 return confirm.confirmContribution;
             }
         },
-        // {
-        //     type: 'confirm',
-        //     name: 'confirmLicense',
-        //     message: 'Does your project have a license?',
-        //     default: false
-        // },
-        // {
-        //     type: 'checkbox',
-        //     name: 'license',
-        //     message: 'Choose which license your project has?',
-        //     choices: ['MIT', 'Apache 2.0', 'ISC']
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'test',
-        //     message: 'detail how others can test your application.'
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'questions',
-        //     message: 'Type your GitHub username to include a link to your profile and your email to have other users reach out to you with questions.'
-        // }
+        {
+            type: 'confirm',
+            name: 'confirmLicense',
+            message: 'Does your project have a license?',
+            default: false
+        },
+        {
+            type: 'list',
+            name: 'license',
+            message: 'Choose which license your project has?',
+            choices: ['MIT', 'Apache 2.0', 'ISC'],
+            validate: licenseInput => {
+                if(licenseInput){
+                    return true;
+                } return false;
+            },
+            when: function(confirm){
+                return confirm.confirmLicense;
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmTInstructions',
+            message: 'Would you like to include testing instructions for future users?',
+            default: false
+        },
+        {
+            type: 'input',
+            name: 'tInstructions',
+            message: 'detail how others can test your application.',
+            validate: tInstructionsInput => {
+                if(tInstructionsInput){
+                    return true;
+                } return false;
+            },
+            when: function(confirm){
+                return confirm.confirmTInstructions;
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmQuestions',
+            message: 'Would you like to add a section with your contact information to allow future users to reach out to you with questions?',
+            default: false
+        },
+        {
+            type: 'input',
+            name: 'questionsEmail',
+            message: 'Please enter your email address.',
+            validate: emailInput => {
+                if(emailInput){
+                    return true;
+                } return false;
+            },
+            when: function(confirm){
+                return confirm.confirmQuestions;
+            }
+        },
+        {
+            type: 'input',
+            name: 'questionsInstructions',
+            message: 'Explain how users should contact you if they have questions (ex: via the email provided)',
+            validate: qInstructionsInput => {
+                if(qInstructionsInput){
+                    return true;
+                } return false;
+            },
+            when: function(confirm){
+                return confirm.confirmQuestions;
+            }
+        },
+        {
+            type: 'input',
+            name: 'questionsGithub',
+            message: 'Please enter the link for your GitHub profile',
+            validate: githubInput => {
+                if(githubInput){
+                    return true;
+                } return false;
+            },
+            when: function(confirm){
+                return confirm.confirmQuestions
+            }
+        }
                 // {
         //     type: 'checkbox',
         //     name: 'contents',
