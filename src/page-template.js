@@ -63,7 +63,7 @@ const generatePage = readmeData => {
     }
 
     if(tocArray){
-        tocArray = tocArray.join('');
+        tocArray = tocArray.join(``);
         tocText = `## Table of Contents \n${tocArray}`;
 
     }

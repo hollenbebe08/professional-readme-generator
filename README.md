@@ -1,9 +1,9 @@
 
 # Title
 
+## Description 
+Description
 
-
-## Table of contents
 ## Table of Contents 
 
 * [Test Instructions](#tInstructions)
@@ -16,19 +16,19 @@
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## Installation Instructions 
-install
+Install Instructions
 
 ## Usage Instructions 
-usage
+Usage Info
 
 ## Contribution Instructions 
-contribute
+Contribution guidelines
 
 ## Test Instructions 
-test
+Testing Instructions
 
 ## Contact Information 
-* email
-* link
-* [GitHub Profile](github)
+* Email
+* Instructions
+* [GitHub Profile](Link)
 
