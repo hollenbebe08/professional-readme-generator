@@ -13,7 +13,7 @@ Description
 * [License](#license)
 
 ## License 
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Installation Instructions 
 Install Instructions
@@ -22,13 +22,13 @@ Install Instructions
 Usage Info
 
 ## Contribution Instructions 
-Contribution guidelines
+Contribution Guidelines
 
 ## Test Instructions 
-Testing Instructions
+testing instructions
 
 ## Contact Information 
-* Email
-* Instructions
-* [GitHub Profile](Link)
+* email
+* instructions
+* [GitHub Profile](github)
 

@@ -8,7 +8,7 @@ const generatePage = readmeData => {
     let tText;
     let questionText;
     let tocArray;
-    let tocText;
+    let tocText = '';
 
     if(!readmeData.confirmDesc){
         descText = ''
@@ -63,7 +63,7 @@ const generatePage = readmeData => {
     }
 
     if(tocArray){
-        tocArray = tocArray.join(``);
+        tocArray = tocArray.join('');
         tocText = `## Table of Contents \n${tocArray}`;
 
     }
