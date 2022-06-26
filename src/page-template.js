@@ -7,7 +7,7 @@ const generatePage = readmeData => {
     let licenseText;
     let tText;
     let questionText;
-    let tableContentsText;
+    let tocArray;
 
     if(!readmeData.confirmDesc){
         descText = ''
@@ -15,27 +15,32 @@ const generatePage = readmeData => {
         descText = `## Description \n${readmeData.description}`;
     };
 
-    if(!readmeData.confirmInstall){
-        installText =  ''
-    } else {
-        installText = `## Installation Instructions \n${readmeData.installation}`;
+    if(readmeData.confirmContents){
+        tocArray = [`\n* [License](#license)`]
     };
 
-    if(!readmeData.confirmUInformation) {
-        uInstructionsText = ''
+    if(readmeData.confirmInstall){
+        installText = `## Installation Instructions \n${readmeData.installation}`;
+        tocArray.unshift(`\n* [Install Instructions](#installation)`);
     } else {
+        installText =  ''
+    };
+
+    if(readmeData.confirmUInformation) {
         uInstructionsText = `## Usage Instructions \n${readmeData.uInstructions}`;
-    }
-
-    if(!readmeData.confirmContribution){
-        contributionText = ''
+        tocArray.unshift(`\n* [Usage Instructions](#uInstructions)`);
     } else {
-        contributionText = `## Contribution Instructions \n${readmeData.contribution}`;
+        uInstructionsText = ''
     }
 
-    if(!readmeData.confirmLicense) {
-        licenseText = ''
-    } else if (readmeData.license === 'MIT'){
+    if(readmeData.confirmContribution){
+        contributionText = `## Contribution Instructions \n${readmeData.contribution}`;
+        tocArray.unshift(`\n* [Contribution Guidelines](#contribution)`);
+    } else {
+        contributionText = ''
+    }
+
+    if(readmeData.license === 'MIT'){
         licenseText = `## License \n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
     } else if (readmeData.license === 'Apache 2.0') {
         licenseText = `## License \n[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
@@ -43,23 +48,18 @@ const generatePage = readmeData => {
         licenseText = `## License \n[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
     }
 
-    if(!readmeData.confirmTInstructions){
+    if(readmeData.confirmTInstructions){
+        tText = `## Test Instructions \n${readmeData.tInstructions}`;
+        tocArray.unshift(`\n* [Test Instructions](#tInstructions)`);
+    } else {
         tText = ''
-    } else {
-        tText = `## Test Instructions \n${readmeData.tInstructions}`
     }
 
-    if(!readmeData.confirmQuestions) {
+    if(readmeData.confirmQuestions) {
+        questionText = `## Contact Information \n* ${readmeData.questionsEmail}\n* ${readmeData.questionsInstructions}\n* [GitHub Profile](${readmeData.questionsGithub})`;
+    } else {
         questionText = ''
-    } else {
-        questionText = `## Contact Information \n* ${readmeData.questionsEmail}\n* ${readmeData.questionsInstructions}\n* [GitHub Profile](${readmeData.questionsGithub})`
     }
-
-    if(!readmeData.confirmContents){
-        tableContentsText = ''
-    } else {
-        tableContentsText= `## Table of Contents \n* ${readmeData.contents}`;
-    } 
 
 //this returns what will be printed from the template onto the README.md file
 return`
@@ -67,7 +67,10 @@ return`
 
 ${descText}
 
-${tableContentsText}
+## Table of contents
+${tocArray}
+
+${licenseText}
 
 ${installText}
 
@@ -75,14 +78,13 @@ ${uInstructionsText}
 
 ${contributionText}
 
-${licenseText}
-
 ${tText}
 
 ${questionText}
 
 `;
 };
+
 
 //allows the generatePage template to be exported into the index.js file
 module.exports = generatePage;

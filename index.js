@@ -96,12 +96,6 @@ const promptUser = readmeData => {
             }
         },
         {
-            type: 'confirm',
-            name: 'confirmLicense',
-            message: 'Does your project have a license?',
-            default: false
-        },
-        {
             type: 'list',
             name: 'license',
             message: 'Choose which license your project has?',
@@ -109,11 +103,10 @@ const promptUser = readmeData => {
             validate: licenseInput => {
                 if(licenseInput){
                     return true;
-                } return false;
+                } else{
+                    return console.log("you must choose a license for your project")
+                }
             },
-            when: function(confirm){
-                return confirm.confirmLicense;
-            }
         },
         {
             type: 'confirm',
@@ -180,25 +173,25 @@ const promptUser = readmeData => {
             }
         },
         {
-            type: 'confirm',
-            name:'confirmContents',
-            message: 'Would you like your README to include a Table of Contents?',
-            default: false
-        },
-        {
             type: 'checkbox',
-            name: 'contents',
-            message: 'Choose which items your README will include in your Table of Contents. (Check all that apply)',
-            choices: ['Installation', 'Usage Instructions', 'License', 'Contribution Instructions', 'Testing Instructions', 'Contact Information'],
-            validate: contentInput => {
-                if(contentInput){
-                    return true;
-                }return false;
-            },
-            when: function(confirm){
-                return confirm.confirmContents
-            }
-        }
+            name:'confirmContents',
+            message: 'Check the box to generate your README.md file',
+            choices: ['generate my file!']
+        },
+        // {
+        //     type: 'checkbox',
+        //     name: 'contents',
+        //     message: 'Choose which items your README will include in your Table of Contents. (Check all that apply)',
+        //     choices: ['Installation', 'Usage Instructions', 'License', 'Contribution Instructions', 'Testing Instructions', 'Contact Information'],
+        //     validate: contentInput => {
+        //         if(contentInput){
+        //             return true;
+        //         }return false;
+        //     },
+        //     when: function(confirm){
+        //         return confirm.confirmContents
+        //     }
+        // }
     ]);
 };
 

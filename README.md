@@ -1,29 +1,34 @@
 
-# Test Title
+# Professional README Generator
 
 ## Description 
-This is a test description
+The professional README generator allows the user to answer prompts using Node.js to create a README.md file to use for their project.
 
-## Table of Contents 
-* Installation,Usage Instructions,License,Contribution Instructions,Testing Instructions,Contact Information
+## Table of contents
 
-## Installation Instructions 
-This is how to install the project
-
-## Usage Instructions 
-You use the project like this
-
-## Contribution Instructions 
-To contribute to the project do this
+* [Test Instructions](#tInstructions),
+* [Contribution Guidelines](#contribution),
+* [Usage Instructions](#uInstructions),
+* [Install Instructions](#installation),
+* [License](#license)
 
 ## License 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+
+## Installation Instructions 
+To use the generator, close this repository and navigate to the index.js file. Make sure you have Node.js installed and then simply type node index into your terminal to  start the prompts!
+
+## Usage Instructions 
+Any individual is free to use this generator. Please clone the repository to use!
+
+## Contribution Instructions 
+If you are wanting to contribute to the README generator, please reach out to me via my contact information below for permission to do so.
 
 ## Test Instructions 
-You can test the project like this
+Currently the professional README generator is not being tested. If you are wanting to perform tests on the generator, please  reach out to me via my contact information below.
 
 ## Contact Information 
-* fake.email@gmail.com
-* Please use the email provided to reach out to me with questions
+* betsy.griffith12@gmail.com
+* If you have any questions please send them to me via the email address provided.
 * [GitHub Profile](https://github.com/hollenbebe08)
 
