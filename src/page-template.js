@@ -8,6 +8,7 @@ const generatePage = readmeData => {
     let tText;
     let questionText;
     let tocArray;
+    let tocText;
 
     if(!readmeData.confirmDesc){
         descText = ''
@@ -61,14 +62,19 @@ const generatePage = readmeData => {
         questionText = ''
     }
 
+    if(tocArray){
+        tocArray = tocArray.join('');
+        tocText = `## Table of Contents \n${tocArray}`;
+
+    }
+
 //this returns what will be printed from the template onto the README.md file
 return`
 # ${readmeData.title}
 
 ${descText}
 
-## Table of contents
-${tocArray}
+${tocText}
 
 ${licenseText}
 
