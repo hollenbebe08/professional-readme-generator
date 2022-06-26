@@ -22,21 +22,21 @@ const generatePage = readmeData => {
 
     if(readmeData.confirmInstall){
         installText = `## Installation Instructions \n${readmeData.installation}`;
-        tocArray.unshift(`\n* [Install Instructions](#installation)`);
+        tocArray.unshift(`\n* [Install Instructions](#installation-instructions)`);
     } else {
         installText =  ''
     };
 
     if(readmeData.confirmUInformation) {
         uInstructionsText = `## Usage Instructions \n${readmeData.uInstructions}`;
-        tocArray.unshift(`\n* [Usage Instructions](#uInstructions)`);
+        tocArray.unshift(`\n* [Usage Instructions](#usage-instructions)`);
     } else {
         uInstructionsText = ''
     }
 
     if(readmeData.confirmContribution){
         contributionText = `## Contribution Instructions \n${readmeData.contribution}`;
-        tocArray.unshift(`\n* [Contribution Guidelines](#contribution)`);
+        tocArray.unshift(`\n* [Contribution Guidelines](#contribution-instructions)`);
     } else {
         contributionText = ''
     }
@@ -51,7 +51,7 @@ const generatePage = readmeData => {
 
     if(readmeData.confirmTInstructions){
         tText = `## Test Instructions \n${readmeData.tInstructions}`;
-        tocArray.unshift(`\n* [Test Instructions](#tInstructions)`);
+        tocArray.unshift(`\n* [Test Instructions](#test-instructions)`);
     } else {
         tText = ''
     }

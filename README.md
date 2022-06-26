@@ -2,27 +2,27 @@
 # Title
 
 ## Description 
-Description
+description
 
 ## Table of Contents 
 
-* [Test Instructions](#tInstructions)
-* [Contribution Guidelines](#contribution)
-* [Usage Instructions](#uInstructions)
-* [Install Instructions](#installation)
+* [Test Instructions](#test-instructions)
+* [Contribution Guidelines](#contribution-instructions)
+* [Usage Instructions](#usage-instructions)
+* [Install Instructions](#installation-instructions)
 * [License](#license)
 
 ## License 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## Installation Instructions 
-Install Instructions
+installation
 
 ## Usage Instructions 
-Usage Info
+usage information
 
 ## Contribution Instructions 
-Contribution Guidelines
+contribution guidelines
 
 ## Test Instructions 
 testing instructions
@@ -30,5 +30,5 @@ testing instructions
 ## Contact Information 
 * email
 * instructions
-* [GitHub Profile](github)
+* [GitHub Profile](link)
 
