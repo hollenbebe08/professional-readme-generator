@@ -6,10 +6,10 @@ The professional README generator allows the user to answer prompts using Node.j
 
 ## Table of contents
 
-* [Test Instructions](#tInstructions),
-* [Contribution Guidelines](#contribution),
-* [Usage Instructions](#uInstructions),
-* [Install Instructions](#installation),
+* [Test Instructions](#tInstructions)
+* [Contribution Guidelines](#contribution)
+* [Usage Instructions](#uInstructions)
+* [Install Instructions](#installation)
 * [License](#license)
 
 ## License 
