@@ -1,8 +1,8 @@
 
-# Title
+# Test Title
 
 ## Description 
-description
+This is a test project description
 
 ## Table of Contents 
 
@@ -13,22 +13,22 @@ description
 * [License](#license)
 
 ## License 
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Installation Instructions 
-installation
+This is how to install this app
 
 ## Usage Instructions 
-usage information
+This is how to use the project
 
 ## Contribution Instructions 
-contribution guidelines
+To contribute to this project do this
 
 ## Test Instructions 
-testing instructions
+Testing instructions go here
 
 ## Contact Information 
-* email
-* instructions
-* [GitHub Profile](link)
+* fake.email@gmail.com
+* Please reach out to me via the email address provided
+* [GitHub Profile](https://github.com/hollenbebe08)
 
